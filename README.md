@@ -36,8 +36,9 @@ Alloy.Globals.isRTL = Ti.Locale.currentLanguage === 'ar';
 
 # Bad points of Titanium with RTL
 Some items will not inverted automatically and you have to use tss (explained in 1st part) to handle position by yourself
+
 1. Since Android 4.2 RTL supported natively for linearlayout (ScrollView with horizontal/vertical layout), but Titanium not using any of this, they calculate the top and left for both iOS and Android  [ref](http://android-developers.blogspot.com.eg/2013/03/native-rtl-support-in-android-42.html)
-2. Text can aligned automatically in native for both iOS and Android, [Android](http://developer.android.com/intl/es/reference/android/view/View.html#attr_android:textDirection) [iOS](https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSString_UIKit_Additions/index.html#//apple_ref/c/econst/NSTextAlignmentNatural)
+2. 2. Text can aligned automatically in native for both iOS and Android, [Android](http://developer.android.com/intl/es/reference/android/view/View.html#attr_android:textDirection) [iOS](https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSString_UIKit_Additions/index.html#//apple_ref/c/econst/NSTextAlignmentNatural)
 
 # Example
 Sooooon
