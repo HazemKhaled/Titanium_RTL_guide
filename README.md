@@ -1,6 +1,6 @@
-# Tips for RTL:
-1. Use this module to force language change, it'll load correct strings [link](http://shareourideas.com/2013/12/02/titanium-locale-module-for-both-android-and-ios/)
-2. Add `android:supportsRtl="true"` into <application> tag in _tiapp.xml_
+# Steps for Titanium RTL Application:
+1 - Use this module to force language change, it'll load correct strings [link](http://shareourideas.com/2013/12/02/titanium-locale-module-for-both-android-and-ios/)
+2 - Add `android:supportsRtl="true"` to <application> tag in _tiapp.xml_
 ```xml
 <android xmlns:android="http://schemas.android.com/apk/res/android">
     <manifest>
@@ -8,7 +8,7 @@
     </manifest>
 </android>
 ```
-3. Use if in .tss file to switch RTL & LTR
+3 - Use if in .tss file to switch RTL & LTR
 ```javascript
 // alloy.js
 Alloy.Globals.isRTL = Ti.Locale.currentLanguage === 'ar';
@@ -24,7 +24,7 @@ Alloy.Globals.isRTL = Ti.Locale.currentLanguage === 'ar';
 	left: 5
 }
 ```
-4. Set iOS 9+ is minimum in tiapp.xml
+4 - Set iOS 9+ is minimum in tiapp.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
@@ -33,7 +33,7 @@ Alloy.Globals.isRTL = Ti.Locale.currentLanguage === 'ar';
   </ios>
 </ti:app>
 ```
-5. Set Android 4.2 as minimum
+5 - Set Android 4.2 as minimum
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
@@ -45,18 +45,18 @@ Alloy.Globals.isRTL = Ti.Locale.currentLanguage === 'ar';
 </ti:app>
 ```
 
-# Good points (iOS 9+ & Android 4.2+)
-1. LeftNavButton & RightNavButton will inverted automatically
-2. Default ListView/TableView templates will inverted
-3. iOS Window.open() transition will be inverted
-4. ActionBar and menus will be inverted
-5. CollectionView on iOS will inverted
+# This items flip from/to RTL/LTR fine
+## iOS 9+
+1. LeftNavButton & RightNavButton
+2. Default ListView/TableView templates
+3. Window open transition come from right with RTL and left with LTR
+4. CollectionView list items from top right with RTL and top left with LTR
 
-# Bad points of Titanium with RTL
-Some items will not inverted automatically and you have to use tss (explained in 1st part) to handle position by yourself
+## Android 4.2+
+1. ActionBar and menus items flip RTL/LTR with zero code
+2. Drawer layout come from right instead of left
 
-1. Since Android 4.2 RTL supported natively for linearlayout (ScrollView with horizontal/vertical layout), but Titanium not using any of this, they calculate the top and left for both iOS and Android  [ref](http://android-developers.blogspot.com.eg/2013/03/native-rtl-support-in-android-42.html)
-2. Text can aligned automatically in native for both iOS and Android, [Android](https://developer.android.com/reference/android/view/View.html#attr_android:textDirection) [iOS](https://developer.apple.com/reference/uikit/nstextalignment/nstextalignmentnatural)
 
-# Example
-Sooooon
+# Current Titanium issues RTL support issues
+1. linearlayout (horizontal/vertical layout) will not flip, Titanium calculate positions manually, same with autolayout in iOS. [ref](http://android-developers.blogspot.com.eg/2013/03/native-rtl-support-in-android-42.html)
+2. Natural direction for the text supported nativly in both iOS and Android, while Titanium has only right, left and center allignment. [Android](https://developer.android.com/reference/android/view/View.html#attr_android:textDirection) [iOS](https://developer.apple.com/reference/uikit/nstextalignment/nstextalignmentnatural)
