@@ -1,6 +1,6 @@
 # Tips for RTL:
 1. Use this module to force language change, it'll load correct strings [link](http://shareourideas.com/2013/12/02/titanium-locale-module-for-both-android-and-ios/)
-2. Add `android:supportsRtl="true"` into <application> tag in `tiapp.xml
+2. Add `android:supportsRtl="true"` into <application> tag in _tiapp.xml_
 ```xml
 <android xmlns:android="http://schemas.android.com/apk/res/android">
     <manifest>
